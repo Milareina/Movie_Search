@@ -1,11 +1,28 @@
 @import "../vars.scss";
 
 .sidebar {
-    max-width: 50px;
-    height: 100%;
+    min-width: 50px;
+    height: 100vh;
 
     position: fixed;
     top: 0;
 
     background-color: $primary-color;
+
+    &__items {
+        padding-top: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__item {
+        width: 25px;
+    }
+
+    &__icon {
+        filter: invert(100%);
+        width: 100%;
+    }
 }
