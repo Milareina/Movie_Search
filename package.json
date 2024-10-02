@@ -11,6 +11,8 @@
   "devDependencies": {
     "sass-embedded": "^1.79.4",
     "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "saas": "^1.0.0"
   }
-  
 }
