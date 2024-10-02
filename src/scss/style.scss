@@ -1,0 +1,14 @@
+@import url(./mixins.scss);
+@import url(./template.scss);
+@import url(./vars.scss);
+
+@import url(./bloks/header.scss);
+@import url(./bloks/burger.scss);
+@import url(./bloks/home.scss);
+@import url(./bloks/aside.scss);
+@import url(./bloks/movies.scss);
+@import url(./bloks/series.scss);
+@import url(./bloks/popular.scss);
+@import url(./bloks/footer.scss);
+
+//Стили пишем в папке bloks!Этот основной файл не трогаем
