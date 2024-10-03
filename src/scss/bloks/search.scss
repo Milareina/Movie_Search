@@ -1,0 +1,138 @@
+.search-page {
+    background: linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.9));
+    // background-color: inherit;
+    &__content-container {
+        padding: 80px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        color: white;
+    }
+    &__title {
+        margin-bottom: 40px;
+        font-weight: 500;
+        color: white;
+        font-size: 3rem;
+    }
+    &__form {
+        margin-bottom: 60px;
+        width: 100%;
+    }
+    &__input-container {
+        position: relative;
+    }
+    &__input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid tomato;
+        border-radius: 2px;
+        padding: 10px;
+        color: white;
+        font-size: 24px;
+        letter-spacing: 0.2px;
+        width: 100%;
+    }
+    &__input::placeholder {
+        color: gray;
+        opacity: 0.8;
+        letter-spacing: 0.2px;
+    }
+    &__icon {
+        display: none;
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+        padding: 5px;
+    }
+}
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+    justify-content: space-between;
+    align-items: center;
+
+    &__item {
+        background-color: rgba(128, 128, 128, 0.552);
+        border-radius: 50px;
+        color: white;
+    }
+    &__item:hover {
+        background-color: tomato;
+        transition: background-color 0.2s ease-in;
+    }
+    &__text {
+        padding: 8px;
+        letter-spacing: 0.5px;
+        font-size: 18px;
+    }
+}
+
+.recommend {
+    display: flex;
+    flex-direction: column;
+    &__title {
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        margin-bottom: 40px;
+    }
+    &__items {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    &__item {
+        max-width: 210px;
+        height: auto;
+        color: white;
+    }
+    &__item:hover {
+        color: tomato;
+        transition: 0.2s ease-in;
+    }
+    &__item img {
+        width: 100%;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+    &__item img:hover {
+        width: 100%;
+        box-shadow: 0 0 10px 2px tomato;
+        transition: box-shadow 0.2s ease-in;
+    }
+    &__item-title {
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 0.1px;
+        margin-bottom: 5px;
+    }
+    &__item-info {
+        display: flex;
+        gap: 5px;
+    }
+    &__button {
+        align-self: center;
+        padding: 15px 25px;
+
+        background-color: tomato;
+        border-radius: 27px;
+        border: none;
+
+        font-size: 20px;
+        font-weight: 600;
+
+        &:hover {
+            background-color: rgba(236, 94, 68, 0.723);
+            transition: color 0.2s ease-in;
+        }
+
+        &:active {
+            position: relative;
+            top: 1px;
+        }
+    }
+}
