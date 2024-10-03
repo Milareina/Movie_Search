@@ -4,12 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../scss/bloks/search.scss">
-    <title>Страница поиска</title>
+    <link rel="stylesheet" href="../scss/style.scss">
+    <title>Поиск фильмов</title>
 </head>
 
 <body>
+    <aside class="sidebar"></aside>
+    <section class="search-page">
+        <div class="search-page__content-container">
+            <h1 class="search-page__title">Поиск</h1>
+            <form action="#" class="search-page__form">
+                <div class="search-page__input-container">
+                    <input type="text" class="search-page__input" id="searchInput"
+                        placeholder="Введите название фильма или сериала" required />
+                    <span class="search-page__icon" id="clearInput">&times;</span>
+                </div>
+            </form>
 
+            <div class="genres">
+                <a href="#" class="genres__item comedy">
+                    <p class="genres__text">Комедии</p>
+                </a>
+                <a href="#" class="genres__item melodram">
+                    <p class="genres__text">Мелодрамы</p>
+                </a>
+                <a href="#" class="genres__item action">
+                    <p class="genres__text">Боевики</p>
+                </a>
+                <a href="#" class="genres__item family">
+                    <p class="genres__text">Семейные</p>
+                </a>
+                <a href="#" class="genres__item horror">
+                    <p class="genres__text">Ужасы</p>
+                </a>
+                <a href="#" class="genres__item criminal">
+                    <p class="genres__text">Криминальные</p>
+                </a>
+                <a href="#" class="genres__item dramas">
+                    <p class="genres__text">Драмы</p>
+                </a>
+                <a href="#" class="genres__item fantasy">
+                    <p class="genres__text">Фентези</p>
+                </a>
+                <a href="#" class="genres__item thrillers">
+                    <p class="genres__text">Триллеры</p>
+                </a>
+                <a href="#" class="genres__item adventures">
+                    <p class="genres__text">Приключения</p>
+                </a>
+            </div>
+
+            <div class="recommend">
+                <h2 class="recommend__title">Рекомендуем</h2>
+                <div class="recommend__items">
+
+                    <a href="#" class="recommend__item">
+                        <img src="../img/aside/film.webp" alt="movie">
+                        <h3 class="recommend__item-title">Говорит Земля!</h3>
+                        <div class="recommend__item-info">
+                            <p class="recommend__item-year">2024,</p>
+                            <p class="recommend__item-genre">Комедия</p>
+                        </div>
+                    </a>
+                </div>
+                <button class="recommend__button">Показать еще</button>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="../js/main.js"></script>
 </body>
 
 </html>

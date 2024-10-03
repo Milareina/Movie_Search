@@ -1,6 +1,6 @@
 // sidebar.js
 export function loadSidebar() {
-    const sidebarHTML = `
+  const sidebarHTML = `
         <div class="sidebar__items">
           <a href="!#" class="sidebar__item" id="search">
             <svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -25,5 +25,5 @@ export function loadSidebar() {
         </div>
     `;
 
-    document.querySelector('.sidebar').innerHTML = sidebarHTML;
+  document.querySelector('.sidebar').innerHTML = sidebarHTML;
 }
