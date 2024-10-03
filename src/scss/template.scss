@@ -14,7 +14,10 @@ body {
     font-family: $main-font;
     font-size: 16px;
 }
-
+.container {
+    width: calc(100vw - 50px);
+    margin-left: 50px;
+}
 a,
 a:link,
 a:visited {
