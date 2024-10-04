@@ -1,9 +1,8 @@
-//Сюда импортируйте свои модули из папаки modules и вызывайте функции
-
 import { loadSidebar } from './modules/sidebar';
-import { setupSearchRedirect } from './modules/search';
+import { getRecommendMovies, initEventListeners } from './modules/search';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadSidebar();
-    setupSearchRedirect();
+    initEventListeners();
+    getRecommendMovies("https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_ALL&page=1");
 });
