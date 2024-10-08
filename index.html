@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/scss/style.scss" />
+    <title>Movie App</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./src/scss/style.scss" />
-  <title>Movie App</title>
-</head>
+  <body>
+    <aside class="sidebar"></aside>
+    <!-- Popular Section начало -->
+    <section class="popular-page">
+      <h2 class="popular-page__title">Популярные фильмы</h2>
+      <div class="popular-page__content-container">
+        <div class="popular-page__content"></div>
+        <button type="button" class="arrow">NEXT</button>
+      </div>
+    </section>
+    <!-- Popular Section  конец -->
 
-<body>
-  <aside class="sidebar"></aside>
-
-  <script type="module" src="./src/js/main.js"></script>
-</body>
-
+    <script type="module" src="./src/js/main.js"></script>
+  </body>
 </html>
