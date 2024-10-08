@@ -1,6 +1,13 @@
 import { loadSidebar } from "./modules/sidebar";
 import { getRecommendMovies, initEventListeners } from "./modules/search";
 import { getPopularMovies } from "./modules/popular";
+import {
+  movieListContainer,
+  fetchSeries,
+  displaySeries,
+  updateItemsPerView,
+  showNextItems,
+} from "./modules/series";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadSidebar();
@@ -8,6 +15,23 @@ document.addEventListener("DOMContentLoaded", () => {
   getRecommendMovies(
     "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_ALL&page=1"
   );
+  //   series
+  movieListContainer,
+    fetchSeries(),
+    displaySeries(),
+    updateItemsPerView(),
+    showNextItems();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchSeries();
+  const arrow = document.getElementById("arrow");
+  arrow.addEventListener("click", showNextItems);
+
+  window.addEventListener("resize", () => {
+    updateItemsPerView();
+    showNextItems();
+  });
 });
 
 getPopularMovies();
