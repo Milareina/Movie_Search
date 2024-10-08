@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/scss/style.scss" />
+    <!-- стрелка из макета start -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!-- стрелка из макета finish -->
+    <title>Movie App</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./src/scss/style.scss" />
-  <title>Movie App</title>
-</head>
+  <body>
+    <aside class="sidebar"></aside>
 
-<body>
-  <aside class="sidebar"></aside>
+    <!-- block series start-->
+    <div class="container">
+      <div class="container__content">
+        <div class="movie-list">
+          <h1 class="movie-list__title">SERIES</h1>
+          <div class="movie-list__wrapper">
+            <div class="movie-list__items" id="movie-list"></div>
+            <i class="fas fa-chevron-right arrow" id="arrow"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- block series finish-->
 
-  <script type="module" src="./src/js/main.js"></script>
-</body>
-
+    <script type="module" src="./src/js/main.js"></script>
+  </body>
 </html>
