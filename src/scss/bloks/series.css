@@ -1,34 +1,34 @@
-@import "../vars.scss";
-
 .container {
   background-color: #151515;
   min-height: calc(100vh - 2%);
   color: white;
-  &__content {
-    margin-left: 2%;
-  }
+}
+.container__content {
+  margin-left: 2%;
 }
 
 .movie-list__wrapper {
   position: relative;
   overflow: hidden;
-  .movie-list__items {
-    display: flex;
-    align-items: center;
-    height: 30vh;
-    transform: translateX(0);
-    transition: all 1s ease-in-out;
-    .movie-list-item {
-      margin-right: 30px;
-      position: relative;
-    }
-  }
 }
+.movie-list__wrapper .movie-list__items {
+  display: flex;
+  align-items: center;
+  height: 30vh;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+}
+.movie-list__wrapper .movie-list__items .movie-list-item {
+  margin-right: 30px;
+  position: relative;
+}
+
 .movie-list-item-img {
   transition: all 1s ease-in-out;
   width: 9vw;
   height: 25vh;
-  object-fit: fill;
+  -o-object-fit: fill;
+     object-fit: fill;
   border-radius: 20px;
 }
 
@@ -46,6 +46,7 @@
   opacity: 0;
   transition: 1s all ease-in-out;
 }
+
 .movie-list-item:hover .movie-list-item-img {
   transform: scale(1.2);
   margin: 0 20px;
@@ -77,3 +78,4 @@
   opacity: 0;
   transition: 1s all ease-in-out;
 }
+/*# sourceMappingURL=series.css.map */
