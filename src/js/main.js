@@ -1,5 +1,5 @@
 import { loadSidebar } from "./modules/sidebar";
-import { getRecommendMovies, initEventListeners } from "./modules/search";
+import { getRecommendMovies, initEventListeners, loadHistoryFromLocalStorage } from "./modules/search";
 import {
   movieListContainer,
   fetchSeries,
@@ -10,10 +10,9 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
   loadSidebar();
+  loadHistoryFromLocalStorage();
   initEventListeners();
-  getRecommendMovies(
-    "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_ALL&page=1"
-  );
+  getRecommendMovies();
   //   series
   movieListContainer,
     fetchSeries(),
@@ -33,4 +32,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//Toggle dark mode
+
