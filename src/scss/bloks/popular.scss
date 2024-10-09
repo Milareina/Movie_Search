@@ -7,7 +7,7 @@ body {
   background-color: rgb(24, 24, 24);
   margin-left: 50px;
   width: calc(100vw - 50px);
-  min-height: 90vh;
+  min-height: 94vh;
   
   &__title {
     font-family: $main-font;
@@ -21,7 +21,6 @@ body {
 
   &__content-container {
     position: relative;
-    overflow: hidden;
   }
 
   &__content {
@@ -101,23 +100,27 @@ transition: all 0.8s,ease-in-out;
 }
   }
   &__watch-button {
+    margin-top: 5%;
+    width: fit-content;
     padding: 10px;
     background-color: #4dbf00;
-    color: white;
+    color: $white;
     border-radius: 10px;
     outline: none;
     border: none;
     cursor: pointer;
-    position: absolute;
-    bottom: 20px;
-    left: 50px;
-    opacity: 0;
-    transition: 1s all ease-in-out;
+    transition: 0.7s all ease-in-out;
+    &:hover {
+      box-shadow: 0 0 10px 2px $accent-color;
+      text-decoration: underline;
+      font-size: larger;
+     }
   }
 }
 
-.arrow {
+.arrow-next {
   font-size: 80px;
+  margin-right: 10vw;
   position: absolute;
   top: 25vh;
   right: 0;

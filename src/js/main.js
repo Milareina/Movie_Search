@@ -1,5 +1,4 @@
 import { loadSidebar } from "./modules/sidebar";
-import { getRecommendMovies, initEventListeners } from "./modules/search";
 import { getPopularMovies } from "./modules/popular";
 import {
   getRecommendMovies,

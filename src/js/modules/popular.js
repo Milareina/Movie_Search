@@ -21,11 +21,17 @@ export async function getPopularMovies() {
     const responseJson = await response.json();
     popularMovies = responseJson.items;
     renderPopularMovies(offset, limit);
+    console.log(popularMovies);
   } catch (error) {
     document.querySelector(
       ".popular-page__title"
     ).innerHTML = `Кажется, что-то пошло не так: ${error.message}`;
     arrow_buttonNext.style.display = "none";
+    const image = document.createElement("img");
+    image.style.margin = "0 auto";
+    image.src =
+      "src/img/popular/foni-papik-pro-8htj-p-kartinki-oshibka-na-prozrachnom-fone-25.png";
+    container.append(image);
   }
 }
 
@@ -46,12 +52,20 @@ function renderPopularMovies(minIndex, maxIndex) {
     p2.textContent = `${popularMovies[i].genres
       .map((genre) => `${genre.genre}`)
       .join(", ")}`;
-    movieWrapper.append(image, p1, p2);
+    const buttonLink = document.createElement("a");
+    buttonLink.textContent = "Смотреть";
+    buttonLink.className = "popular-page__watch-button";
+    buttonLink.setAttribute(
+      "href",
+      `https://www.kinopoisk.ru/film/${popularMovies[i].kinopoiskId}/`
+    );
+    buttonLink.setAttribute("target", "blank");
+    movieWrapper.append(image, p1, p2, buttonLink);
     container.append(movieWrapper);
   }
 }
 
-/* Функции видимости и переключения кнопок 'следующая-предыдущая страницы' */
+/* Функции видимости и переключения кнопок 'следующая-предыдущая страницы'*/
 arrow_buttonNext.addEventListener("click", next);
 arrow_buttonPrev.addEventListener("click", previous);
 arrow_buttonPrev.style.display = "none";
@@ -72,6 +86,8 @@ function previous() {
   renderPopularMovies(offset, offset + limit);
   if (offset == 0) {
     arrow_buttonPrev.style.display = "none";
+  }
+  if (offset < 15) {
     arrow_buttonNext.style.display = "block";
   }
 }
