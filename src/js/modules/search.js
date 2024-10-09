@@ -28,14 +28,12 @@ let allGenreMovies = [];
 function updateHistoryDisplay() {
     searchHistoryContainer.innerHTML = '';
 
-    // Создаем элемент для заголовка
     if (searchHistory.length > 0) {
         const title = document.createElement('p');
         title.textContent = 'Недавно искали :';
         searchHistoryContainer.appendChild(title);
     }
 
-    // Создаем элементы для каждого пункта истории поиска
     searchHistory.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
@@ -140,9 +138,32 @@ export async function getRecommendMovies() {
         recommendTitle.innerHTML = `Кажется, что что-то пошло не так: ${error.message}`;
     }
 }
-async function searchByGenre(genre) {
+function showSkeleton() {
+    recommendItems.innerHTML = `
+    <div class="recommend__skeleton-wrapper">
+        <div class="recommend__skeleton-container">
+            <div class="recommend__skeleton-item"></div>
+            <div class="recommend__skeleton-item"></div>
+            <div class="recommend__skeleton-item"></div>
+            <div class="recommend__skeleton-item"></div>
+            <div class="recommend__skeleton-item"></div>
+            <div class="recommend__skeleton-item"></div>
+            <div class="recommend__skeleton-item"></div>
+            <div class="recommend__skeleton-item"></div>
+            <div class="recommend__skeleton-item"></div>
+            <div class="recommend__skeleton-item"></div>
+        </div>
+    </div>
+    `;
+}
+//Ф-ия поиска по жанру
+async function searchByGenre(genre, genreText) {
     try {
-        recommendTitle.innerHTML = `Поиск по жанру: ${genre}`;
+        allMovies = [];
+        currentIndex = 0;
+        recommendItems.innerHTML = '';
+        recommendTitle.innerHTML = `${genreText}`;
+        showSkeleton();
 
         let filteredMovies = [];
 
@@ -157,9 +178,9 @@ async function searchByGenre(genre) {
 
         recommendItems.innerHTML = '';
 
-        recommendTitle.textContent = allMovies.length > 0
-            ? `Результаты по жанру: ${genre}`
-            : `По жанру "${genre}" ничего не найдено`;
+        if (allMovies.length > 0) {
+            recommendTitle.textContent = `${genreText}`;
+        }
 
         renderMovies(allMovies);
 
@@ -167,6 +188,7 @@ async function searchByGenre(genre) {
         recommendTitle.innerHTML = `Кажется, что что-то пошло не так: ${error.message}`;
     }
 }
+
 //ф-ия рендера карточек
 export function renderMovies(movies) {
     const moviesToShow = movies.slice(currentIndex, currentIndex + moviesPerPage);
@@ -267,6 +289,8 @@ export function initEventListeners() {
             searchHistoryContainer.classList.add('visible');
         }
         searchInput.classList.add('search-page__input--modified');
+
+        genreItems.forEach(item => item.classList.remove('genres__item--selected'));
     });
 
     document.addEventListener('click', (event) => {
@@ -281,7 +305,11 @@ export function initEventListeners() {
         link.addEventListener('click', (event) => {
             event.preventDefault();
 
-            const genreText = link.querySelector('.genres__text').textContent.toLowerCase();
+            genreItems.forEach(item => item.classList.remove('genres__item--selected'));
+
+            link.classList.add('genres__item--selected');
+
+            const genreText = link.querySelector('.genres__text').textContent;
 
             const genreMapping = {
                 "комедии": "комедия",
@@ -291,16 +319,17 @@ export function initEventListeners() {
                 "ужасы": "ужасы",
                 "криминальные": "криминал",
                 "драмы": "драма",
-                "фентези": "фэнтези",
+                "фэнтези": "фэнтези",
                 "триллеры": "триллер",
                 "приключения": "приключения"
             };
 
-            const genreForSearch = genreMapping[genreText];
+            const genreForSearch = genreMapping[genreText.toLowerCase()];
 
             if (genreForSearch) {
-                searchByGenre(genreForSearch);
+                searchByGenre(genreForSearch, genreText);
             }
         });
     });
+
 }
