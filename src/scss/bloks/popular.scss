@@ -7,7 +7,7 @@ body {
   background-color: rgb(24, 24, 24);
   margin-left: 50px;
   width: calc(100vw - 50px);
-  min-height: max-content;
+  min-height: 94vh;
   
   &__title {
     font-family: $main-font;
@@ -123,6 +123,7 @@ transition: all 0.8s,ease-in-out;
   position: absolute;
   top: 25vh;
   right: 0;
+
   color: lightgray;
   opacity: 0.5;
   cursor: pointer;
