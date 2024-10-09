@@ -32,3 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
     showNextItems();
   });
 });
+
+//Toggle dark mode
