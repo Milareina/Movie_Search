@@ -100,20 +100,7 @@ transition: all 0.8s,ease-in-out;
   transition: 0.5s;
 }
   }
-}
-
-.arrow {
-  font-size: 80px;
-  position: absolute;
-  top: 25vh;
-  right: 0;
-  color: lightgray;
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-
- /*_movie-button {
+  &__watch-button {
     padding: 10px;
     background-color: #4dbf00;
     color: white;
@@ -127,18 +114,26 @@ transition: all 0.8s,ease-in-out;
     opacity: 0;
     transition: 1s all ease-in-out;
   }
-  .arrow {
-    font-size: 120px;
-    position: absolute;
-    top: 90px;
-    right: 0;
-    color: lightgray;
-    opacity: 0.5;
-    cursor: pointer;
-  }
+}
 
-      @media (max-width: 800px) {
-        gap: 3vw;
-        justify-content: space-evenly;
-  }
-*/
+.arrow {
+  font-size: 80px;
+  position: absolute;
+  top: 25vh;
+  right: 0;
+  color: lightgray;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.arrow-prev {
+  font-size: 80px;
+  position: absolute;
+  top: 25vh;
+  left: 0;
+  color: lightgray;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+

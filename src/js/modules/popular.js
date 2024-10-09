@@ -1,7 +1,11 @@
 const container = document.querySelector(".popular-page__content");
-const arrow_button = document.querySelector(".arrow");
+const arrow_buttonNext = document.querySelector(".arrow");
+const arrow_buttonPrev = document.querySelector(".arrow-prev");
 let popularMovies = [];
+let offset = 0; /* Переменная начальной точки отсчета фильмов */
+let limit = 5; /* Переменная лимита фильмов за раз*/
 
+/* Функция получения данных о фильмах с api */
 export async function getPopularMovies() {
   try {
     const response = await fetch(
@@ -16,14 +20,16 @@ export async function getPopularMovies() {
     );
     const responseJson = await response.json();
     popularMovies = responseJson.items;
-    renderPopularMovies(0, 5);
+    renderPopularMovies(offset, limit);
   } catch (error) {
     document.querySelector(
       ".popular-page__title"
     ).innerHTML = `Кажется, что-то пошло не так: ${error.message}`;
+    arrow_buttonNext.style.display = "none";
   }
 }
 
+/* Функция визуализации каждых последующих или предыдущих пяти фильмов */
 function renderPopularMovies(minIndex, maxIndex) {
   for (let i = minIndex; i < maxIndex; i++) {
     let movieWrapper = document.createElement("div");
@@ -45,23 +51,27 @@ function renderPopularMovies(minIndex, maxIndex) {
   }
 }
 
-arrow_button.addEventListener("click", next);
+/* Функции видимости и переключения кнопок 'следующая-предыдущая страницы' */
+arrow_buttonNext.addEventListener("click", next);
+arrow_buttonPrev.addEventListener("click", previous);
+arrow_buttonPrev.style.display = "none";
 
 function next() {
-  let click = false;
-  if (!click) {
-    container.innerHTML = "";
-    renderPopularMovies(5, 10);
-    click = true;
-  }
-  if (click) {
-    container.innerHTML = "";
-    renderPopularMovies(10, 15);
+  container.innerHTML = "";
+  offset = offset + limit;
+  renderPopularMovies(offset, offset + limit);
+  arrow_buttonPrev.style.display = "block";
+  if (offset == 15) {
+    arrow_buttonNext.style.display = "none";
   }
 }
 
-/*container.innerHTML = "";
-renderPopularMovies(15, 20);
-
-
-offset = (offset+limit)%20/*/
+function previous() {
+  container.innerHTML = "";
+  offset = offset - limit;
+  renderPopularMovies(offset, offset + limit);
+  if (offset == 0) {
+    arrow_buttonPrev.style.display = "none";
+    arrow_buttonNext.style.display = "block";
+  }
+}

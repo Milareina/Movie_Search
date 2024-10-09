@@ -10,6 +10,7 @@ import {
 } from "./modules/series";
 
 document.addEventListener("DOMContentLoaded", () => {
+  getPopularMovies();
   loadSidebar();
   initEventListeners();
   getRecommendMovies(
@@ -27,11 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchSeries();
   const arrow = document.getElementById("arrow");
   arrow.addEventListener("click", showNextItems);
-
   window.addEventListener("resize", () => {
     updateItemsPerView();
     showNextItems();
   });
 });
-
-getPopularMovies();
