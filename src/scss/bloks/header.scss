@@ -1,75 +1,136 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  height: 50px;
+  padding: 0 20px;
+  color: $white;
+
+  &__logo {
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-size: 20px;
+    margin-left: 45px;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      justify-content: center;
+    }
+    &-item {
+      margin-left: 20px;
+    }
+    &-link {
+      color: $white;
+      font-weight: bold;
+    }
+    &-link:hover {
+      color: $accent-color;
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    span {
+      width: 25px;
+      height: 3px;
+      background-color: $white;
+      margin: 3px 0;
+      transition: all 0.3s ease;
+    }
+
+    &.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    &.active span:nth-child(2) {
+      opacity: 0;
+    }
+    &.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  &__nav {
     display: flex;
-    justify-content: space-between;
+    &.open {
+      display: block;
+    }
+  }
+
+  &__toggle {
+    display: flex;
     align-items: center;
-    background-color: $primary-color;
-    height: 50px;
-    padding: 0 20px;
+  }
+  &__toggle-label {
+    margin-left: 10px;
     color: $white;
+    font-size: 14px;
+  }
 
+  // Планшетная версия (от 768px до 1023px)
+  @media (max-width: 1023px) and (min-width: 768px) {
     &__logo {
-        font-family: "Sixtyfour Convergence", sans-serif;
-        font-size: 20px;
-        margin-left: 45px;
-    }
-    &__nav-list {
-        display: flex;
-    }
-    &__nav-item {
-        margin-left: 20px;
-    }
-    &__nav-link {
-        color: $white;
-        font-weight: bold;
+      font-size: 22px;
+      margin-left: 30px;
     }
 
-    &__nav-link:hover {
-        color: $accent-color;
+    &__nav-list {
+      justify-content: flex-end;
+      margin-right: 25px;
+      font-size: 16px;
     }
-    &____toggle {
-        display: flex;
-        align-items: center;
+    &__toggle {
+      margin-left: 10px;
     }
     &__toggle-label {
-        margin-left: 10px;
-        color: $white;
+      font-size: 12px;
     }
-}
-.movie {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: inherit;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    padding-right: 50px;
-    &__content {
-        text-align: left;
-        max-width: 400px;
-        margin-left: 50px;
-        padding-left: 20px;
-    }
-    &__title {
-        font-size: 48px;
-        margin-bottom: 20px;
-        color: inherit;
-    }
-    &__description {
-        font-size: 18px;
-        margin-bottom: 20px;
-        color: inherit;
-    }
-    &__watch-btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: $accent-color;
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 600;
-        border-radius: 27px;
+  }
 
-        @include hover-effect($search-hover-color);
+  // Мобильная версия (до 767px)
+  @media (max-width: 767px) {
+    &__nav-list {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: $primary-color;
+      width: 100%;
+      padding: 20px 0;
+
+      &.open {
+        display: flex;
+      }
     }
+
+    &__logo {
+      position: absolute;
+      left: 43%;
+      transform: translateX(-50%);
+    }
+
+    &__burger {
+      display: flex;
+      position: absolute;
+      left: 50px;
+    }
+
+    &__toggle-label {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 587px) {
+    &__logo {
+      font-size: 16px;
+    }
+    &__toggle-label {
+      font-size: 8px;
+    }
+  }
 }

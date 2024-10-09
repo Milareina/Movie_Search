@@ -1,3 +1,4 @@
+import { loadHeader } from "./modules/header";
 import { loadSidebar } from "./modules/sidebar";
 import {
   getRecommendMovies,
@@ -11,15 +12,18 @@ import {
   updateItemsPerView,
   showNextItems,
 } from "./modules/series";
-import { getMovies, toggleBtn } from "./modules/header";
-
+import { getMovies, toggleBtn } from "./modules/home";
+import { loadFooter } from "./modules/footer";
 document.addEventListener("DOMContentLoaded", () => {
+  loadHeader();
   loadSidebar();
+  loadFooter();
   getMovies();
   toggleBtn();
   loadHistoryFromLocalStorage();
   initEventListeners();
   getRecommendMovies();
+
   //   series
   movieListContainer,
     fetchSeries(),
