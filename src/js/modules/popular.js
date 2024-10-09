@@ -1,5 +1,5 @@
 const container = document.querySelector(".popular-page__content");
-const arrow_buttonNext = document.querySelector(".arrow");
+const arrow_buttonNext = document.querySelector(".arrow-next");
 const arrow_buttonPrev = document.querySelector(".arrow-prev");
 let popularMovies = [];
 let offset = 0; /* Переменная начальной точки отсчета фильмов */

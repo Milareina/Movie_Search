@@ -15,7 +15,6 @@ import {
 import { getMovies } from "./modules/header";
 
 document.addEventListener("DOMContentLoaded", () => {
-  getPopularMovies();
   getMovies();
   loadSidebar();
   loadHistoryFromLocalStorage();
@@ -38,3 +37,5 @@ document.addEventListener("DOMContentLoaded", () => {
     showNextItems();
   });
 });
+
+getPopularMovies();
