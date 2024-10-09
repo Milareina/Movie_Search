@@ -5,14 +5,14 @@
   width: calc(100vw - 50px);
   margin: 0 auto;
   padding-left: 4%;
-  min-height: 96vh;
+  min-height: 100vh;
   
   &__title {
     font-weight: 500;
     color: $white;
     font-size: 3rem;
     margin: 0;
-    padding-top: 2vh;
+    padding-top: 4vh;
     padding-left: 3vw;
   }
 
@@ -26,7 +26,7 @@
     align-items: flex-start;
     justify-content: flex-start;
       margin-left: 3%;
-      margin-top: 2%;
+      margin-top: 2.8%;
       padding-right: 8%;
       gap: 2vw;
     transform: translateX(0);
@@ -43,9 +43,8 @@
 
 
  &__movie-image {
-  transition: 0.7s ease-in-out;
-  width: 16vw;
-height: 49vh;
+transition: 0.7s ease-in-out;
+height: 47vh;
 min-width: 190px;
 min-height: 170px;
   object-fit: cover;
@@ -53,7 +52,7 @@ min-height: 170px;
 
  &:hover {
   box-shadow: 0 0 10px 2px $accent-color;
-  width: 20vw;
+  width: 23vw;
   height: 52vh;
  }
 
@@ -68,7 +67,7 @@ font-size: 1.5rem;
 margin-top: 2%;
 color: $white;
 font-weight: 500;
-transition: 0.7s all ease-in-out;
+transition: 0.5s all ease-in-out;
 &:hover {
   color: $accent-color;
   font-size: 1.7rem;
@@ -82,7 +81,7 @@ transition: 0.7s all ease-in-out;
     font-weight: 300;
     margin-top: 2%;
     color: $white;
-    transition: 0.7s all ease-in-out;
+    transition: 0.5s all ease-in-out;
 &:hover {
   color: $accent-color;
   font-size: 1.2rem;
@@ -116,7 +115,7 @@ transition: 0.7s all ease-in-out;
   right: 0;
   color: lightgray;
   opacity: 0.4;
-  margin-right: -1.2vw;
+  margin-right: -1.1vw;
   cursor: pointer;
   transition: 0.5s all ease-in-out;
   &:hover {
@@ -131,11 +130,11 @@ transition: 0.7s all ease-in-out;
 
 
 .arrow-prev {
-  font-size: 7vw;
+  font-size: 6.8vw;
   position: absolute;
   top: 19vh;
   left: 0;
-  margin-left: -1.8vw;
+  margin-left: -2vw;
   color: lightgray;
   opacity: 0.4;
   cursor: pointer;
@@ -143,7 +142,7 @@ transition: 0.7s all ease-in-out;
   &:hover {
     color: $accent-color;
     filter: drop-shadow(0 0 35px rgb(247, 162, 4));
-    font-size: 9.5vw;
+    font-size: 8.1vw;
    }
   @media (max-width: 800px) {
     font-size: 15.5vw;

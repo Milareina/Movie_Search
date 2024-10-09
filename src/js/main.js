@@ -1,5 +1,6 @@
 import { loadHeader } from "./modules/header";
 import { loadSidebar } from "./modules/sidebar";
+import { getPopularMovies } from "./modules/popular";
 import {
   getRecommendMovies,
   initEventListeners,
@@ -15,6 +16,7 @@ import {
 import { getMovies, toggleBtn } from "./modules/home";
 import { loadFooter } from "./modules/footer";
 document.addEventListener("DOMContentLoaded", () => {
+  getPopularMovies();
   loadHeader();
   loadSidebar();
   loadFooter();
