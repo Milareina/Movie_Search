@@ -1,48 +1,3 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   const toggleSwitch = document.getElementById("theme-toggle");
-//   const body = document.body;
-
-//   toggleSwitch.addEventListener("change", function () {
-//     if (this.checked) {
-//       body.classList.remove("theme-light");
-//       body.classList.add("theme-dark");
-//     } else {
-//       body.classList.remove("theme-dark");
-//       body.classList.add("theme-light");
-//     }
-//   });
-// });
-// //картинка фильма в home
-// const apiKey = "b6027775-465a-49ee-aecc-0731f7b27b31";
-// const apiUrl =
-//   "https://kinopoiskapiunofficial.tech/api/v2.2/films/images?type=STILL&page=1";
-
-// async function getRandomMovie() {
-//   try {
-//     const response = await fetch(apiUrl, {
-//       headers: {
-//         "Content-Type": "application/json",
-//         "X-API-KEY": apiKey,
-//       },
-//     });
-
-//     const data = await response.json();
-
-//     const movies = data.results;
-//     const randomMovie = movies[Math.floor(Math.random() * movies.length)];
-//     document.querySelector(".movie__title").textContent = randomMovie.title;
-//     document.querySelector(".movie__description").textContent =
-//       randomMovie.overview;
-//     const posterPath = `https://avatars.mds.yandex.net/get-kinopoisk-image/1898899/cdd38047-43f1-4e0d-9c70-3cbaaf1a9857/orig${randomMovie.backdrop_path}`;
-//     document.querySelector(
-//       ".movie"
-//     ).style.backgroundImage = `url(${posterPath})`;
-//   } catch (error) {
-//     console.error("Ошибка при получении данных", error);
-//   }
-// }
-
-// getRandomMovie();
 const movieContainer = document.querySelector(".movie__content");
 const movieContent = document.querySelector(".movie");
 const apiMoviesUrl = "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_ALL&page=1";
@@ -116,4 +71,32 @@ function startMovieRotation() {
         currentMovieIndex = (currentMovieIndex + 1) % movies.length; // Увеличиваем индекс и обнуляем 
         renderMovie(movies[currentMovieIndex]); // Рендерим новый фильм
     }, 100000); // Каждые 10 секунд
+}
+
+//Кнопка
+export function toggleBtn() {
+    const toggleBtn = document.querySelector("#theme-toggle");
+    const body = document.body;
+
+    // Проверка localStorage на сохраненную тему и состояние чекбокса
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "light") {
+        body.classList.add("toggle"); // Применяем светлую тему
+        toggleBtn.checked = true; // Устанавливаем чекбокс в положение "включено"
+    } else {
+        body.classList.remove("toggle"); // Применяем темную тему по умолчанию
+        toggleBtn.checked = false; // Устанавливаем чекбокс в положение "выключено"
+    }
+
+    // Обработчик на изменение состояния чекбокса
+    toggleBtn.addEventListener("change", () => {
+        body.classList.toggle("toggle");
+
+        // Сохраняем тему и состояние чекбокса в localStorage
+        if (toggleBtn.checked) {
+            localStorage.setItem("theme", "light");
+        } else {
+            localStorage.setItem("theme", "dark");
+        }
+    });
 }

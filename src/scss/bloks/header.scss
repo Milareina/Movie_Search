@@ -1,14 +1,3 @@
-body {
-    &__theme-light {
-        background-color: $white;
-        color: $primary-color;
-    }
-    &__theme-dark {
-        background-color: $primary-color;
-        color: $white;
-    }
-}
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -50,7 +39,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    // background-image: url("/src/img/home/trigger3.jpg");
+    background-color: inherit;
     background-size: cover;
     background-position: center;
     height: 100vh;

@@ -28,12 +28,14 @@ let allGenreMovies = [];
 function updateHistoryDisplay() {
     searchHistoryContainer.innerHTML = '';
 
+    // Создаем элемент для заголовка
     if (searchHistory.length > 0) {
         const title = document.createElement('p');
         title.textContent = 'Недавно искали :';
         searchHistoryContainer.appendChild(title);
     }
 
+    // Создаем элементы для каждого пункта истории поиска
     searchHistory.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
@@ -213,8 +215,10 @@ function createMovieElement(movie) {
         <img src="${movie.posterUrlPreview}" alt="${movie.nameRu}">
         <h3 class="recommend__item-title">${movie.nameRu}</h3>
         <div class="recommend__item-info">
-            <p class="recommend__item-year">${movie.year}</p>
-            <p class="recommend__item-type">${movieType}</p>
+            <div class="recommend__item-description">
+                <p class="recommend__item-year">${movie.year},</p>
+                <p class="recommend__item-type">${movieType}</p>
+            </div>
             <p class="recommend__item-genre">${movie.genres.map(genre => `${genre.genre}`).join(', ')}</p>
         </div>
     `;

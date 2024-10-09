@@ -7,11 +7,12 @@ import {
   updateItemsPerView,
   showNextItems,
 } from "./modules/series";
-import { getMovies } from "./modules/header";
+import { getMovies, toggleBtn } from "./modules/header";
 
 document.addEventListener("DOMContentLoaded", () => {
-  getMovies();
   loadSidebar();
+  getMovies();
+  toggleBtn();
   loadHistoryFromLocalStorage();
   initEventListeners();
   getRecommendMovies();
@@ -33,7 +34,5 @@ document.addEventListener("DOMContentLoaded", () => {
     showNextItems();
   });
 });
-
-
 
 
