@@ -17,8 +17,11 @@
             <form action="#" class="search-page__form">
                 <div class="search-page__input-container">
                     <input type="text" class="search-page__input" id="searchInput"
-                        placeholder="Введите название фильма или сериала" required />
+                        placeholder="Введите название фильма или сериала" required autocomplete="off" />
                     <span class="search-page__icon" id="clearInput">&times;</span>
+                    <ul class="search-page__history-container" id="searchHistory">
+                    </ul>
+
                 </div>
             </form>
 
@@ -45,7 +48,7 @@
                     <p class="genres__text">Драмы</p>
                 </a>
                 <a href="#" class="genres__item fantasy">
-                    <p class="genres__text">Фентези</p>
+                    <p class="genres__text">Фэнтези</p>
                 </a>
                 <a href="#" class="genres__item thrillers">
                     <p class="genres__text">Триллеры</p>
