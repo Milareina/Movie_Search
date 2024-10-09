@@ -2,6 +2,11 @@ import { loadSidebar } from "./modules/sidebar";
 import { getRecommendMovies, initEventListeners } from "./modules/search";
 import { getPopularMovies } from "./modules/popular";
 import {
+  getRecommendMovies,
+  initEventListeners,
+  loadHistoryFromLocalStorage,
+} from "./modules/search";
+import {
   movieListContainer,
   fetchSeries,
   displaySeries,
@@ -12,10 +17,9 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   getPopularMovies();
   loadSidebar();
+  loadHistoryFromLocalStorage();
   initEventListeners();
-  getRecommendMovies(
-    "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_ALL&page=1"
-  );
+  getRecommendMovies();
   //   series
   movieListContainer,
     fetchSeries(),

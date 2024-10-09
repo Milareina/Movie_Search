@@ -14,7 +14,47 @@
     <title>Movie App</title>
   </head>
 
-  <body>
+  <body class="theme-light">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo">MovieSearch</div>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Home</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Movies</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Series</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Popular</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__toggle">
+        <input
+          type="checkbox"
+          id="theme-toggle"
+          class="header__toggle-checkbox"
+        />
+        <label for="theme-toggle" class="header__toggle-label">Dark mode</label>
+      </div>
+    </header>
+
+    <!-- Home Section -->
+    <section class="movie">
+      <div class="movie__content">
+        <h1 class="movie__title">Название фильма</h1>
+        <p class="movie__description">
+          Краткое описание фильма какого-то тут должно быть.
+        </p>
+        <a href="./src/html/search.html" class="movie__watch-btn">Смотреть</a>
+      </div>
+    </section>
+
     <aside class="sidebar"></aside>
     <!-- Popular Section начало -->
     <section class="popular-page">
