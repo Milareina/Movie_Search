@@ -1,86 +1,65 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/scss/style.scss" />
-    <!-- стрелка из макета start -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <!-- стрелка из макета finish -->
-    <title>Movie App</title>
-  </head>
 
-  <body class="theme-light">
-    <!-- Header -->
-    <header class="header">
-      <div class="header__logo">MovieSearch</div>
-      <nav class="header__nav">
-        <ul class="header__nav-list">
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">Home</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">Movies</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">Series</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#" class="header__nav-link">Popular</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="header__toggle">
-        <input
-          type="checkbox"
-          id="theme-toggle"
-          class="header__toggle-checkbox"
-        />
-        <label for="theme-toggle" class="header__toggle-label">Dark mode</label>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/scss/style.scss" />
+  <!-- стрелка из макета start -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <!-- стрелка из макета finish -->
+  <title>Movie App</title>
+</head>
 
-    <!-- Home Section -->
-    <section class="movie">
-      <div class="movie__content">
-        <h1 class="movie__title">Название фильма</h1>
-        <p class="movie__description">
-          Краткое описание фильма какого-то тут должно быть.
-        </p>
-        <a href="./src/html/search.html" class="movie__watch-btn">Смотреть</a>
-      </div>
-    </section>
+<body class="theme-light">
+  <!-- Header -->
+  <header class="header">
+    <div class="header__logo">MovieSearch</div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Home</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Movies</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Series</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Popular</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__toggle">
+      <input type="checkbox" id="theme-toggle" class="header__toggle-checkbox" />
+      <label for="theme-toggle" class="header__toggle-label">Dark mode</label>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section class="movie">
+    <div class="movie__content">
+  </section>
 
     <aside class="sidebar"></aside>
-    <!-- Popular Section начало -->
-    <section class="popular-page">
-      <h2 class="popular-page__title">Популярные фильмы</h2>
-      <div class="popular-page__content-container">
-        <div class="popular-page__content"></div>
-        <i class="fas fa-chevron-right arrow"></i>
-        <button type="button" class="arrow-prev">PREVIOUS</button>
-      </div>
-    </section>
-    <!-- Popular Section  конец -->
 
-    <!-- block series start-->
-    <div class="container">
-      <div class="container__content">
-        <div class="movie-list">
-          <h1 class="movie-list__title">SERIES</h1>
-          <div class="movie-list__wrapper">
-            <div class="movie-list__items" id="movie-list"></div>
-            <i class="fas fa-chevron-right arrow" id="arrow"></i>
-          </div>
+  <!-- block series start-->
+  <div class="container">
+    <div class="container__content">
+      <div class="movie-list">
+        <h1 class="movie-list__title">SERIES</h1>
+        <div class="movie-list__wrapper">
+          <div class="movie-list__items" id="movie-list"></div>
+          <i class="fas fa-chevron-right arrow" id="arrow"></i>
         </div>
       </div>
     </div>
-    <!-- block series finish-->
+  </div>
+  <!-- block series finish-->
 
-    <script type="module" src="./src/js/main.js"></script>
-  </body>
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+
 </html>

@@ -42,7 +42,7 @@ body {
         letter-spacing: 0.2px;
         border-radius: 2px;
     }
-    .search-page__input--modified {
+    &__input--modified {
         border-bottom: 2px solid tomato !important;
     }
 
@@ -161,116 +161,156 @@ body {
             }
         }
     }
-}
 
-.genres {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 80px;
-    justify-content: space-between;
-    align-items: center;
-
-    &__item {
-        padding: 5px;
-        background-color: rgba(128, 128, 128, 0.552);
-        border-radius: 50px;
-        color: $white;
-        @include hover-effect($accent-color);
-    }
-
-    &__text {
-        padding: 8px;
-        letter-spacing: 0.5px;
-        font-size: 18px;
-    }
-}
-
-.recommend {
-    display: flex;
-    flex-direction: column;
-
-    &__title {
-        font-size: 2rem;
-        font-weight: 400;
-        letter-spacing: 0.2px;
-        margin-bottom: 40px;
-    }
-
-    &__items {
-        @include flex-center(row);
+    .genres {
+        display: flex;
         flex-wrap: wrap;
-        gap: 30px;
-        margin-bottom: 40px;
-    }
+        margin-bottom: 80px;
+        justify-content: space-between;
+        align-items: center;
 
-    &__item {
-        margin-bottom: 120px;
-        max-width: 210px;
-        height: 300px;
-        color: $white;
-
-        img {
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-            object-fit: cover;
-            margin-bottom: 10px;
-            box-shadow: 0 0 10px 2px transparent;
-            cursor: pointer;
-            z-index: 22;
-
-            transition: transform 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
-
+        &__item {
+            padding: 5px;
+            background-color: rgba(128, 128, 128, 0.552);
+            border-radius: 50px;
+            color: $white;
             @include hover-effect($accent-color);
 
-            &:hover {
-                box-shadow: 0 0 10px 2px $accent-color;
-                transform: scale(1.02);
-                z-index: 22;
+            &--selected {
+                background-color: $accent-color;
             }
+        }
+
+        &__text {
+            padding: 8px;
+            letter-spacing: 0.5px;
+            font-size: 18px;
         }
     }
 
-    &__item:hover {
-        color: $accent-color;
-        transition: 0.2s ease-in;
-    }
-
-    &__item-title {
-        display: block;
-        font-size: 1.2rem;
-        font-weight: 500;
-        letter-spacing: 0.1px;
-        margin-bottom: 5px;
-        cursor: pointer;
-    }
-
-    &__item-info {
+    .recommend {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        color: rgba(128, 128, 128, 0.779);
-    }
-    &__item-info p {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+        max-width: 100%;
+        flex-wrap: wrap;
 
-    &__button {
-        align-self: center;
-        padding: 15px 25px;
-        background-color: $accent-color;
-        border-radius: 27px;
-        border: none;
-        font-size: 20px;
-        font-weight: 600;
+        &__title {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+            margin-bottom: 40px;
+        }
 
-        @include hover-effect($search-hover-color);
+        &__items {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
 
-        &:active {
-            position: relative;
-            top: 1px;
+        &__item {
+            margin-bottom: 120px;
+            max-width: 210px;
+            height: 300px;
+            color: $white;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                object-fit: cover;
+                margin-bottom: 10px;
+                box-shadow: 0 0 10px 2px transparent;
+                cursor: pointer;
+                z-index: 22;
+
+                transition: transform 0.8s ease-in-out,
+                    box-shadow 0.8s ease-in-out;
+
+                @include hover-effect($accent-color);
+
+                &:hover {
+                    box-shadow: 0 0 10px 2px $accent-color;
+                    transform: scale(1.02);
+                    z-index: 22;
+                }
+            }
+        }
+
+        &__item:hover {
+            color: $accent-color;
+            transition: 0.2s ease-in;
+        }
+
+        &__item-title {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        &__item-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            color: rgba(128, 128, 128, 0.779);
+        }
+        &__item-info p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &__button {
+            align-self: center;
+            padding: 15px 25px;
+            background-color: $accent-color;
+            border-radius: 27px;
+            border: none;
+            font-size: 20px;
+            font-weight: 600;
+
+            @include hover-effect($search-hover-color);
+
+            &:active {
+                position: relative;
+                top: 1px;
+            }
+        }
+
+        &__skeleton-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        &__skeleton-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        &__skeleton-item {
+            background-color: rgba(147, 146, 146, 0.317);
+            border-radius: 20px;
+            height: 300px;
+            width: 210px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                background-color: rgba(100, 100, 100, 0.178);
+            }
+            50% {
+                background-color: rgba(100, 100, 100, 0.16);
+            }
+            100% {
+                background-color: rgba(100, 100, 100, 0.038);
+            }
         }
     }
 }

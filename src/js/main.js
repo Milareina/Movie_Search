@@ -12,9 +12,11 @@ import {
   updateItemsPerView,
   showNextItems,
 } from "./modules/series";
+import { getMovies } from "./modules/header";
 
 document.addEventListener("DOMContentLoaded", () => {
   getPopularMovies();
+  getMovies();
   loadSidebar();
   loadHistoryFromLocalStorage();
   initEventListeners();
