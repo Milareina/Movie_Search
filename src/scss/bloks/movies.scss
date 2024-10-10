@@ -44,7 +44,7 @@
   border-radius: 20px;
 }
 
-.movie-list-item:hover .movie-list-item-img {
+.movie-list-item:hover .movie-movie-list-item-img {
   transform: scale(1.2);
   margin: 0 30px;
   opacity: 0.5;
@@ -56,10 +56,10 @@
   opacity: 1;
 }
 
-.movie-list-item-img {
+.movie-movie-list-item-img {
   transition: all 1s ease-in-out;
   min-width: 250px;
-  height: 30vh;
+
   object-fit: cover;
 }
 
