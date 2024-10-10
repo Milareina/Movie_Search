@@ -1,6 +1,6 @@
 export function movies() {
-  const arrowRight = document.querySelector(".arrow-right");
-  const arrowLeft = document.querySelector(".arrow-left");
+  const arrowRight = document.querySelector(".movie-arrow-right");
+  const arrowLeft = document.querySelector(".movie-arrow-left");
   const movieList = document.querySelector(".movie-list");
 
   let offset = 0;

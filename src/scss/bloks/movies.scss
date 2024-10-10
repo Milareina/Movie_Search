@@ -6,11 +6,9 @@
   padding-left: 50px;
 }
 
-.content-container {
-}
-
-.movie-list-container {
+.movie-movie-list-container {
   position: relative;
+  margin-left: 5rem;
 }
 
 .movie-list-wrapper {
@@ -101,20 +99,20 @@
   transition: 1s all ease-in-out;
 }
 
-.arrow-right {
-  font-size: 120px;
+.movie-arrow-right {
+  font-size: 6vw;
   position: absolute;
-  top: 90px;
+  top: 10rem;
   right: 0;
   color: lightgray;
   opacity: 0.5;
   cursor: pointer;
 }
 
-.arrow-left {
+.movie-arrow-left {
   font-size: 6vw;
   position: absolute;
-  top: 90px;
+  top: 10rem;
   color: lightgray;
   opacity: 0.5;
   cursor: pointer;
