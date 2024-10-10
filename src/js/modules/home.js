@@ -4,10 +4,9 @@ const apiMoviesUrl =
   "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_ALL&page=1";
 const apiKey = "b6027775-465a-49ee-aecc-0731f7b27b31";
 
-let movies = []; // Массив для хранения фильмов
-let currentMovieIndex = 0; // Индекс текущего фильма
+let movies = [];
+let currentMovieIndex = 0;
 
-// Функция для получения данных из API
 async function fetchFromApi(url) {
   try {
     const response = await fetch(url, {
@@ -37,7 +36,6 @@ async function fetchFromApi(url) {
   }
 }
 
-//Функция получения фильмов
 export async function getMovies() {
   try {
     movies = await fetchFromApi(apiMoviesUrl); // Получаем фильмы
@@ -74,32 +72,4 @@ function startMovieRotation() {
     currentMovieIndex = (currentMovieIndex + 1) % movies.length; // Увеличиваем индекс и обнуляем
     renderMovie(movies[currentMovieIndex]); // Рендерим новый фильм
   }, 100000); // Каждые 10 секунд
-}
-
-//Кнопка
-export function toggleBtn() {
-  const toggleBtn = document.querySelector("#theme-toggle");
-  const body = document.body;
-
-  // Проверка localStorage на сохраненную тему и состояние чекбокса
-  const storedTheme = localStorage.getItem("theme");
-  if (storedTheme === "light") {
-    body.classList.add("toggle"); // Применяем светлую тему
-    toggleBtn.checked = true; // Устанавливаем чекбокс в положение "включено"
-  } else {
-    body.classList.remove("toggle"); // Применяем темную тему по умолчанию
-    toggleBtn.checked = false; // Устанавливаем чекбокс в положение "выключено"
-  }
-
-  // Обработчик на изменение состояния чекбокса
-  toggleBtn.addEventListener("change", () => {
-    body.classList.toggle("toggle");
-
-    // Сохраняем тему и состояние чекбокса в localStorage
-    if (toggleBtn.checked) {
-      localStorage.setItem("theme", "light");
-    } else {
-      localStorage.setItem("theme", "dark");
-    }
-  });
 }

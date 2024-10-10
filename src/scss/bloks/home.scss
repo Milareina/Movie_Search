@@ -5,7 +5,7 @@
   background-color: inherit;
   background-size: cover;
   background-position: center;
-  height: 160vh;
+  height: 100vh;
   padding-right: 50px;
 
   &__content {
@@ -35,48 +35,5 @@
     border-radius: 27px;
 
     @include hover-effect($search-hover-color);
-  }
-  // Планшетная версия (от 768px до 1023px)
-  @media (max-width: 1023px) and (min-width: 768px) {
-    &__title {
-      font-size: 36px;
-    }
-    &__description {
-      font-size: 16px;
-    }
-    &__content {
-      margin-left: 30px;
-      max-width: 350px;
-    }
-  }
-  // Мобильная версия (до 767px)
-  @media (max-width: 767px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding-right: 0;
-    text-align: center;
-    background-size: cover;
-    height: 110vh;
-
-    &__content {
-      margin-left: 15px;
-      padding-left: 0;
-      max-width: 100%;
-      padding: 20px;
-    }
-
-    &__title {
-      font-size: 28px;
-    }
-
-    &__description {
-      font-size: 14px;
-    }
-
-    &__watch-btn {
-      font-size: 14px;
-      padding: 10px 16px;
-    }
   }
 }
