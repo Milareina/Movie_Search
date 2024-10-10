@@ -1,46 +1,31 @@
 import { loadHeader } from "./modules/header";
 import { loadSidebar } from "./modules/sidebar";
+import { getRecommendMovies, initEventListeners, loadHistoryFromLocalStorage, } from "./modules/search";
 import { getPopularMovies } from "./modules/popular";
-import {
-  getRecommendMovies,
-  initEventListeners,
-  loadHistoryFromLocalStorage,
-} from "./modules/search";
-import {
-  movieListContainer,
-  fetchSeries,
-  displaySeries,
-  updateItemsPerView,
-  showNextItems,
-} from "./modules/series";
+import { initSeriesModule } from "./modules/series";
 import { getMovies, toggleBtn } from "./modules/home";
 import { loadFooter } from "./modules/footer";
-document.addEventListener("DOMContentLoaded", () => {
-  getPopularMovies();
-  loadHeader();
-  loadSidebar();
-  loadFooter();
-  getMovies();
-  toggleBtn();
-  loadHistoryFromLocalStorage();
-  initEventListeners();
-  getRecommendMovies();
-
-  //   series
-  movieListContainer,
-    fetchSeries(),
-    displaySeries(),
-    updateItemsPerView(),
-    showNextItems();
-});
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetchSeries();
-  const arrow = document.getElementById("arrow");
-  arrow.addEventListener("click", showNextItems);
+  const isSearchPage = document.querySelector(".search-page") !== null;
 
-  window.addEventListener("resize", () => {
-    updateItemsPerView();
-    showNextItems();
-  });
+  if (isSearchPage) {
+    loadHeader();
+    loadSidebar();
+    toggleBtn();
+    loadHistoryFromLocalStorage();
+    initEventListeners();
+    getRecommendMovies();
+    loadFooter();
+  } else {
+    loadHeader();
+    loadSidebar();
+    getMovies();
+    toggleBtn();
+    getPopularMovies();
+    initSeriesModule();
+    loadFooter();
+  }
 });
+
+

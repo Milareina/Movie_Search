@@ -39,3 +39,8 @@
         transform-origin: center;
     }
 }
+@media (max-width: 390px) {
+    .sidebar {
+        display: none;
+    }
+}
