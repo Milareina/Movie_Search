@@ -1,7 +1,7 @@
 export function movies() {
   const arrowRight = document.querySelector(".movie-arrow-right");
   const arrowLeft = document.querySelector(".movie-arrow-left");
-  const movieList = document.querySelector(".movie-list");
+  const movieList = document.querySelector(".movie-movie-list");
 
   let offset = 0;
   const step = 20;
@@ -45,15 +45,15 @@ export function movies() {
     movieList.innerHTML = "";
     list.forEach((film) => {
       const filmDiv = document.createElement("div");
-      filmDiv.className = "movie-list-item";
+      filmDiv.className = "movie-movie-list-item";
       filmDiv.innerHTML = `
           <img class="movie-movie-list-item-img" src="${
             film?.posterUrlPreview
           }" alt="" />
-          <span class="movie-list-item-title">${
+          <span class="movie-movie-list-item-title">${
             film?.nameRu ? film?.nameRu : ""
           }</span>
-          <button class="movie-list-item-button">Смотреть</button>
+          <button class="movie-movie-list-item-button">Смотреть</button>
         `;
       movieList.appendChild(filmDiv);
     });

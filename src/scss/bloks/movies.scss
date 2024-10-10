@@ -18,7 +18,7 @@
   width: 90%;
 }
 
-.movie-list {
+.movie-movie-list {
   display: flex;
   align-items: center;
   height: 40vh;
@@ -26,14 +26,14 @@
   transition: all 1s ease-in-out;
 }
 
-.movie-list-title {
+.movie-movie-list-title {
   margin-left: 5vw;
   margin-bottom: 3vh;
   margin-top: 3vh;
   font-size: 36px;
 }
 
-.movie-list-item {
+.movie-movie-list-item {
   min-width: 20%;
   margin-right: 0, 8vw;
   position: relative;
@@ -41,15 +41,15 @@
   border-radius: 20px;
 }
 
-.movie-list-item:hover .movie-movie-list-item-img {
+.movie-movie-list-item:hover .movie-movie-list-item-img {
   transform: scale(1.2);
   margin: 0 30px;
   opacity: 0.5;
 }
 
-.movie-list-item:hover .movie-list-item-title,
-.movie-list-item:hover .movie-list-item-desc,
-.movie-list-item:hover .movie-list-item-button {
+.movie-movie-list-item:hover .movie-movie-list-item-title,
+.movie-movie-list-item:hover .movie-movie-list-item-desc,
+.movie-movie-list-item:hover .movie-movie-list-item-button {
   opacity: 1;
 }
 
@@ -60,7 +60,7 @@
   object-fit: cover;
 }
 
-.movie-list-item-title {
+.movie-movie-list-item-title {
   background-color: #333;
   padding: 0 10px;
   font-size: 28px;
@@ -72,7 +72,7 @@
   transition: 1s all ease-in-out;
 }
 
-.movie-list-item-desc {
+.movie-movie-list-item-desc {
   background-color: #333;
   padding: 10px;
   font-size: 14px;
@@ -84,7 +84,7 @@
   transition: 1s all ease-in-out;
 }
 
-.movie-list-item-button {
+.movie-movie-list-item-button {
   padding: 10px;
   background-color: #4dbf00;
   color: white;
@@ -127,6 +127,6 @@
   background-color: white;
 }
 
-.movie-list-title.active {
+.movie-movie-list-title.active {
   color: black;
 }
