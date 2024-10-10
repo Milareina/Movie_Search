@@ -66,9 +66,12 @@ function renderPopularMovies(minIndex, maxIndex) {
 }
 
 /* Функции видимости и переключения кнопок 'следующая-предыдущая страницы'*/
-arrow_buttonNext.addEventListener("click", next);
-arrow_buttonPrev.addEventListener("click", previous);
-arrow_buttonPrev.style.display = "none";
+if (container && arrow_buttonNext && arrow_buttonPrev) {
+  arrow_buttonNext.addEventListener("click", next);
+  arrow_buttonPrev.addEventListener("click", previous);
+  arrow_buttonPrev.style.display = "none";
+
+}
 
 function next() {
   container.innerHTML = "";

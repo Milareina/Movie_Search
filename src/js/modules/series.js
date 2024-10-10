@@ -86,14 +86,16 @@ export function showNextItems() {
     currentIndex = totalItems - itemsPerView;
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
+export function initSeriesModule() {
   fetchSeries();
   const arrow = document.getElementById("arrow");
-  arrow.addEventListener("click", showNextItems);
+
+  if (arrow) {
+    arrow.addEventListener("click", showNextItems);
+  }
 
   window.addEventListener("resize", () => {
     updateItemsPerView();
     showNextItems();
   });
-});
+}
