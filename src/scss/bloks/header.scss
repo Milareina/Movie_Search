@@ -8,7 +8,6 @@
   color: $white;
 
   &__logo {
-    font-family: "Sixtyfour Convergence", sans-serif;
     font-size: 20px;
     margin-left: 45px;
   }
@@ -68,69 +67,5 @@
     margin-left: 10px;
     color: $white;
     font-size: 14px;
-  }
-
-  // Планшетная версия (от 768px до 1023px)
-  @media (max-width: 1023px) and (min-width: 768px) {
-    &__logo {
-      font-size: 22px;
-      margin-left: 30px;
-    }
-
-    &__nav-list {
-      justify-content: flex-end;
-      margin-right: 25px;
-      font-size: 16px;
-    }
-    &__toggle {
-      margin-left: 10px;
-    }
-    &__toggle-label {
-      font-size: 12px;
-    }
-  }
-
-  // Мобильная версия (до 767px)
-  @media (max-width: 767px) {
-    &__nav-list {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 50px;
-      right: 0;
-      background-color: $primary-color;
-      width: 100%;
-      padding: 20px 0;
-
-      &.open {
-        display: flex;
-      }
-    }
-
-    &__logo {
-      position: absolute;
-      left: 43%;
-      transform: translateX(-50%);
-    }
-
-    &__burger {
-      display: flex;
-      position: absolute;
-      left: 50px;
-    }
-
-    &__toggle-label {
-      font-size: 10px;
-    }
-  }
-  @media (max-width: 587px) {
-    &__logo {
-      font-size: 16px;
-    }
-    &__toggle-label {
-      font-size: 8px;
-    }
   }
 }

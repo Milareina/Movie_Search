@@ -1,4 +1,3 @@
-import { loadHeader } from "./modules/header";
 import { loadSidebar } from "./modules/sidebar";
 
 import { movies } from "./modules/movies";
@@ -11,34 +10,27 @@ import {
 
 import { getPopularMovies } from "./modules/popular";
 import { initSeriesModule } from "./modules/series";
-import { getMovies, toggleBtn } from "./modules/home";
-import { loadFooter } from "./modules/footer";
+import { getMovies } from "./modules/home";
 
 document.addEventListener("DOMContentLoaded", () => {
   const isSearchPage = document.querySelector(".search-page") !== null;
 
   if (isSearchPage) {
-    loadHeader();
     loadSidebar();
-    toggleBtn();
     loadHistoryFromLocalStorage();
     initEventListeners();
     getRecommendMovies();
-    loadFooter();
   } else {
-    loadHeader();
     loadSidebar();
     getMovies();
-    toggleBtn();
     getPopularMovies();
     initSeriesModule();
-    loadFooter();
   }
 });
+
+movies();
 
 window.addEventListener("resize", () => {
   updateItemsPerView();
   showNextItems();
 });
-
-movies();
