@@ -24,18 +24,16 @@ let searchHistory = [];
 let allGenreMovies = [];
 
 
-//Обновление истории запроса
+//Ф-ия обновления истории запроса
 function updateHistoryDisplay() {
     searchHistoryContainer.innerHTML = '';
 
-    // Создаем элемент для заголовка
     if (searchHistory.length > 0) {
         const title = document.createElement('p');
         title.textContent = 'Недавно искали :';
         searchHistoryContainer.appendChild(title);
     }
 
-    // Создаем элементы для каждого пункта истории поиска
     searchHistory.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
@@ -70,8 +68,7 @@ function updateHistoryDisplay() {
     localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
 }
 
-
-//Сохранение истории запроса
+//Ф-ия сохранения истории запроса
 export function loadHistoryFromLocalStorage() {
     const storedHistory = localStorage.getItem('searchHistory');
     if (storedHistory) {
@@ -132,14 +129,18 @@ export async function searchMovies(keyword) {
 //Ф-ия получения рекомендаций
 export async function getRecommendMovies() {
     try {
+        showSkeleton();
         const data = await fetchFromApi(apiRecommendedUrl);
         allMovies = data;
+        recommendItems.innerHTML = '';
         renderMovies(allMovies);
         recommendTitle.textContent = "Рекомендуем";
     } catch (error) {
         recommendTitle.innerHTML = `Кажется, что что-то пошло не так: ${error.message}`;
     }
 }
+
+//Ф-ия отображения склетов фильмов при загрузке
 function showSkeleton() {
     recommendItems.innerHTML = `
     <div class="recommend__skeleton-wrapper">
@@ -204,6 +205,7 @@ export function renderMovies(movies) {
 
     toggleButtonVisibility(currentIndex < movies.length);
 }
+
 //Ф-ия создания карточки фильма
 function createMovieElement(movie) {
     const movieElement = document.createElement("a");
@@ -224,11 +226,13 @@ function createMovieElement(movie) {
     `;
     return movieElement;
 }
+
 //Ф-ия показа кнопок
 function toggleButtonVisibility(isVisible) {
     recommendButton.style.display = isVisible ? 'block' : 'none';
     scrollToTopButton.style.display = isVisible ? 'none' : 'block';
 }
+
 //Ф-ия  инициализации обработчиков
 export function initEventListeners() {
     recommendButton.addEventListener("click", () => renderMovies(allMovies));
