@@ -34,21 +34,21 @@
   }
 
   &__content-item {
-    position: relative;
     width: 100%;
-    height: 100%;
+    height: 77vh;
     display: flex;
    flex-direction: column;
+   justify-content: space-between;
   }
 
 
  &__movie-image {
 transition: 0.7s ease-in-out;
-height: 47vh;
+height: 50vh;
 min-width: 190px;
 min-height: 170px;
-  object-fit: cover;
-  border-radius: 20px;
+object-fit: cover;
+border-radius: 20px;
 
  &:hover {
   box-shadow: 0 0 10px 2px $accent-color;
@@ -90,23 +90,19 @@ transition: 0.5s all ease-in-out;
 
   }
   &__watch-button {
-    margin-top: 5%;
-    width: fit-content;
-    padding: 10px;
-    background-color: #4dbf00;
-    color: $white;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: 0.7s all ease-in-out;
-    &:hover {
-      box-shadow: 0 0 10px 2px $accent-color;
-      text-decoration: underline;
-      font-size: larger;
-     }
+      width: 65%;
+      display: inline-block;
+      padding: 5% 15%;
+      background-color: $accent-color;
+      color: $white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 27px;
+  
+      @include hover-effect($search-hover-color);
+    }
   }
-}
 
 .arrow-next {
   font-size: 10.9vw;
