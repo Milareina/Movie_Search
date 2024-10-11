@@ -2,7 +2,7 @@ const movieContainer = document.querySelector(".movie__content");
 const movieContent = document.querySelector(".movie");
 const apiMoviesUrl =
   "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_ALL&page=1";
-const apiKey = "b6027775-465a-49ee-aecc-0731f7b27b31";
+const apiKey = "dd146e83-6098-4c58-bea6-a52186942de2";
 
 let movies = [];
 let currentMovieIndex = 0;
@@ -52,9 +52,8 @@ function createMovieElement(movie) {
 
   movieElement.innerHTML = `
         <h1 class="movie__title">${movie.nameRu}</h1>
-        <p class="movie__description">${
-          movie.description || "Описание отсутствует."
-        }</p>
+        <p class="movie__description">${movie.description || "Описание отсутствует."
+    }</p>
         <a href="#" class="movie__watch-btn">Смотреть</a>
     `;
   movieContent.style.backgroundImage = `url(${movie.posterUrl})`; // Меняем фон
